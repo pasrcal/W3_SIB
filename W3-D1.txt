@@ -1,0 +1,46 @@
+--week 3 day 1--
+
+insert into orders 
+(orderid, customerid, employeeid,orderdate,requireddate,shipvia,freight,shipname,shipaddress,shipcity,shippostalcode,shipcountry)
+values (11550,'VINET',3,'2017-09-16','2017-09-30',3,42.5,'Vins et alcools Chevalier','59 rue de 1 Abbaye','Reims','51100','France');
+
+select * from orders o 
+where customerid = 'VINET' and employeeid = 4;
+
+select requireddate from orders o 
+where orderid = 23456;
+
+update orders 
+set requireddate = '2017-09-29', freight = 70
+where orderid = 23456;
+
+select requireddate from orders o 
+where orderid = 23456;
+
+select * from orders o 
+where orderid = 23456 and customerid = 'VINET';
+
+delete from orders 
+where orderid = 23456 and customerid = 'VINET';
+
+select * into suppliers_karibia 
+from suppliers s 
+where country in ('Africa','Netherland');
+
+select * from suppliers_karibia ;
+
+select * from suppliers_asia sa 
+where country in ('Alaska','Palestine');
+
+insert into suppliers_asia 
+select * from suppliers 
+where country in ('Alaska','Palestine');
+
+select * from suppliers_asia sa 
+where country in ('Alaska','Palestine');
+
+select * from suppliers_asia sa 
+where country in ('Brazil','Argentina');
+
+select * from products p 
+where productname = 'Queso Cabrales';
